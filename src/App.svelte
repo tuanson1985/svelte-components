@@ -1,23 +1,24 @@
 <script>
-  import Card from "./components/Card.svelte";
+  import NameList from "./components/NameList.svelte";
 </script>
 
 <main>
-  <Card>Card content</Card>
-  <Card><h2>Card content</h2></Card>
-  <Card><img src="https://picsum.photos/200" alt=""></Card>
-  <Card />
-  <Card>
-    <div slot="header">
-      <h3>Header</h3>
-    </div>
-    <div slot="content">
-      <img src="https://picsum.photos/200" alt="">
-    </div>
-    <div slot="footer">
-      <button>View Details</button>
-    </div>
-  </Card>
+  <NameList>
+    <h3 slot="hero" let:firstName let:lastName>
+      {firstName} {lastName}
+    </h3>
+  </NameList>
+
+  <NameList>
+    <h3 slot="hero" let:firstName let:lastName>
+      {lastName} {firstName}
+    </h3>
+  </NameList>
+  <NameList>
+    <h3 slot="hero" let:firstName>
+      {firstName}
+    </h3>
+  </NameList>
 </main>
 
 <style>
