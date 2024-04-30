@@ -1,20 +1,13 @@
 <script>
-  import Greet from "./components/Greet.svelte";
-  const name = "Bui Tuan Son";
-  const channel = "HQGROUP";
-  const obj = {
-    name: "HQPLAY",
-    heroName: "HQGROUP",
-  };
+  import { setContext } from "svelte";
+  import ComponentC from "./components/ComponentC.svelte";
+  const userName = "Bui Tuan Son";
+  setContext("username-context", userName);
 </script>
 
 <main>
-  <Greet name="Sonbt" heroName="Nhan vien" />
-  <Greet name="Truongdv" heroName="Pho phong" />
-  <Greet name="Phuongdt" heroName="Nhan vien" />
-  <Greet {name} heroName={channel} />
-  <Greet name={obj.name} heroName={obj.heroName} />
-  <Greet {...obj} />
+  <h2>App component username - {userName}</h2>
+  <ComponentC />
 </main>
 
 <style>
