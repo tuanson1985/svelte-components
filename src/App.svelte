@@ -1,32 +1,9 @@
 <script>
-  import { onMount, onDestroy, beforeUpdate, afterUpdate, tick } from 'svelte';
-  let photos = [];
-  onMount(async () => {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/photos?_limit=20`);
-    photos = await res.json();
-  }) 
-
-export function onInterval(callback, milliseconds) {
-  const interval = setInterval(callback, milliseconds);
-  onDestroy(() => {
-    clearInterval(interval);
-  });
-}
-
-let div;
-let autoscroll;
-beforeUpdate(() => {
-  autoscroll = div && (div.offsetHeight + div.scrollTop) > (div.scrollHeight - 20);
-})
-afterUpdate(() => {
-  if(autoscroll) div.scrollTo(0, div.scrollHeight);
-})
-
-await tick();
+  import PostList from "./components/PostList.svelte";
 </script>
 
 <main>
-  <h3>App component global style</h3>
+  <PostList />
 </main>
 
 <style>
