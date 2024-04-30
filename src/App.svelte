@@ -1,21 +1,15 @@
 <script>
-  import Popup from "./components/Popup.svelte";
-  let showPopup = false;
-  function closePoup(event) {
-    showPopup = false;
-    console.log(event.detail);
+  import Outer from "./components/Outer.svelte";
+  import Button from "./components/Button.svelte";
+
+  function handleGreet(event) {
+    alert(event.detail);
   }
 </script>
 
 <main>
-  <button
-    on:click={() => {
-      showPopup = true;
-    }}>Show Popup</button
-  >
-  {#if showPopup}
-    <Popup on:close={closePoup} />
-  {/if}
+  <Outer on:greet={handleGreet} />
+  <Button on:click={() => alert("Click")}>Click</Button>
 </main>
 
 <style>
