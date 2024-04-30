@@ -7,6 +7,17 @@
   <Card><h2>Card content</h2></Card>
   <Card><img src="https://picsum.photos/200" alt=""></Card>
   <Card />
+  <Card>
+    <div slot="header">
+      <h3>Header</h3>
+    </div>
+    <div slot="content">
+      <img src="https://picsum.photos/200" alt="">
+    </div>
+    <div slot="footer">
+      <button>View Details</button>
+    </div>
+  </Card>
 </main>
 
 <style>

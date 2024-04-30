@@ -1,5 +1,16 @@
 <div class="card">
-    <slot>Default Content</slot>
+    <div class="card-header">
+        <slot name="header"></slot>
+    </div>
+    <div class="card-content">
+        <slot name="content">Default Content</slot>
+    </div>
+    {#if $$slots.footer}
+    <hr />
+    <div class="card-footer">
+        <slot name="footer"></slot>
+    </div>
+    {/if}
 </div>
   
 <style>
